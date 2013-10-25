@@ -1,0 +1,32 @@
+{
+  "name": "delaunay-triangulate",
+  "version": "0.0.0",
+  "description": "Exact Delaunay triangulation",
+  "main": "triangulate.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "incremental-delaunay": "~0.0.1",
+    "simplicial-complex": "~0.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikolalysenko/delaunay-triangulate.git"
+  },
+  "keywords": [
+    "delaunay",
+    "exact",
+    "robust",
+    "geometry"
+  ],
+  "author": "Mikola Lysenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikolalysenko/delaunay-triangulate/issues"
+  }
+}
