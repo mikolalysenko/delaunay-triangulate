@@ -19,10 +19,10 @@ outer_loop:
   for(var cur=triangulation.prev; cur!==triangulation; cur=cur.prev) {
     var v = cur.vertices
     for(var i=0; i<v.length; ++i) {
-      if(v[i] < dimension) {
+      if(v[i] <= dimension) {
         continue outer_loop
       }
-      v[i] -= dimension
+      v[i] -= dimension + 1
     }
     cells.push(v)
   }
