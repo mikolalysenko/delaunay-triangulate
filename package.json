@@ -1,6 +1,6 @@
 {
   "name": "delaunay-triangulate",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Exact Delaunay triangulation",
   "main": "triangulate.js",
   "directories": {
