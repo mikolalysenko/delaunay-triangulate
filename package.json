@@ -1,13 +1,13 @@
 {
   "name": "delaunay-triangulate",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Exact Delaunay triangulation",
   "main": "triangulate.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
-    "incremental-delaunay": "~0.0.1",
+    "incremental-delaunay": "^1.0.0",
     "simplicial-complex": "~0.3.3"
   },
   "devDependencies": {},
