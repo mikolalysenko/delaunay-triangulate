@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "incremental-delaunay": "^1.0.0",
-    "simplicial-complex": "^1.0.0"
+    "simplicial-complex": "^1.0.0",
+    "uniq": "^1.0.1"
   },
   "devDependencies": {
     "tape": "^2.13.1"
