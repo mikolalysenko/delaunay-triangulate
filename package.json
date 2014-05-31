@@ -8,11 +8,13 @@
   },
   "dependencies": {
     "incremental-delaunay": "^1.0.0",
-    "simplicial-complex": "~0.3.3"
+    "simplicial-complex": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "^2.13.1"
+  },
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",

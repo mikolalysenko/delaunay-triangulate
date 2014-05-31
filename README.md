@@ -1,6 +1,6 @@
 delaunay-triangulate
 ====================
-Triangulates a set of points into a Delaunay triangulation.  This is a wrapper over [incremental-delaunay](https://npmjs.org/package/incremental-delaunay) which is more user-friendly.  This code works in arbitrary dimensions, and both in the server and in the browser.
+Triangulates a set of points into a Delaunay triangulation.  This code works in arbitrary dimensions, and both in the server and in the browser.
 
 ## Example
 
@@ -26,7 +26,7 @@ console.log(triangles)
 
 ## API
 
-### `require("delaunay-triangulate")(points)`
+#### `require("delaunay-triangulate")(points)`
 Constructs a Delaunay triangulation over `points`
 
 * `points` is a collection of points in Euclidean space.
