@@ -1,7 +1,6 @@
 "use strict"
 
 var ch = require("incremental-convex-hull")
-var sc = require("simplicial-complex")
 var uniq = require("uniq")
 
 module.exports = triangulate
@@ -79,7 +78,7 @@ function triangulate(points) {
   }
 
   //Construct convex hull
-  return sc.normalize(ch(dpoints).filter(function(cell) {
+  return ch(dpoints).filter(function(cell) {
     for(var i=0; i<=d; ++i) {
       var v = dindex[cell[i]]
       if(v < 0) {
@@ -88,5 +87,5 @@ function triangulate(points) {
       cell[i] = v
     }
     return true
-  }))
+  })
 }

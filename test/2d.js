@@ -1,6 +1,7 @@
 "use strict"
 
 var tape = require("tape")
+var compare = require("./util/normalize").compare
 var triangulate = require("../triangulate")
 
 tape("delaunay-2d", function(t) {
@@ -14,9 +15,12 @@ tape("delaunay-2d", function(t) {
 
   var triangles = triangulate(points)
 
-  t.same(triangles, )
-
-  console.log(triangles)
+  compare(t, triangles, [
+      [4,0,3],
+      [4,2,0],
+      [4,2,1],
+      [4,3,1]
+    ], "simple 2d")
 
   t.end()
 })

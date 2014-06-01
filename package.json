@@ -1,6 +1,6 @@
 {
   "name": "delaunay-triangulate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Exact Delaunay triangulation",
   "main": "triangulate.js",
   "directories": {
@@ -8,11 +8,12 @@
   },
   "dependencies": {
     "incremental-delaunay": "^1.0.0",
-    "simplicial-complex": "^1.0.0",
     "uniq": "^1.0.1"
   },
   "devDependencies": {
-    "tape": "^2.13.1"
+    "tape": "^2.13.1",
+    "permutation-parity": "^1.0.0",
+    "simplicial-complex": "^1.0.0"
   },
   "scripts": {
     "test": "tape test/*.js"
