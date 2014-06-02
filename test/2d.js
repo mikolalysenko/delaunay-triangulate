@@ -13,14 +13,23 @@ tape("delaunay-2d", function(t) {
     [0.5, 0.5]
   ]
 
-  var triangles = triangulate(points)
-
-  compare(t, triangles, [
+  compare(t, triangulate(points), [
       [4,0,3],
       [4,2,0],
       [4,2,1],
       [4,3,1]
     ], "simple 2d")
+
+  compare(t, triangulate(points, true), [
+      [4,0,3],
+      [4,2,0],
+      [4,2,1],
+      [4,3,1],
+      [-1,3,0],
+      [-1,0,2],
+      [-1,1,2],
+      [-1,1,3]
+    ], "2d + point at infinity")
 
   t.end()
 })

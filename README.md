@@ -26,12 +26,13 @@ console.log(triangles)
 
 ## API
 
-#### `require("delaunay-triangulate")(points)`
+#### `require("delaunay-triangulate")(points[,pointAtInfinity])`
 Constructs a Delaunay triangulation over `points`
 
 * `points` is a collection of points in Euclidean space.
+* `pointAtInfinity` is a flag, which if set adds an extra point at infinity to give the spherical compactification of the triangulation.  The index of the point at infinity is `-1`
 
 **Returns** A list of cells representing the faces of the triangulation.  These are triangles in 2D or tetrahedra in 3D.
 
 ## Credits
-(c) 2013 Mikola Lysenko. MIT License
+(c) 2013-2014 Mikola Lysenko. MIT License

@@ -2,6 +2,7 @@
 
 var ch = require("incremental-convex-hull")
 var uniq = require("uniq")
+var sc = require("simplicial-complex")
 
 module.exports = triangulate
 
@@ -23,12 +24,39 @@ function compareLifted(a, b) {
   return 0
 }
 
-function triangulate(points) {
+
+function triangulate1D(n, points, includePointAtInfinity) {
+  var lifted = points.map(function(p, i) {
+    return [ p[0], i ]
+  })
+  lifted.sort(function(a,b) {
+    return a[0] - b[0]
+  })
+  var cells = new Array(n - 1)
+  for(var i=1; i<n; ++i) {
+    var a = lifted[i-1]
+    var b = lifted[i]
+    cells.push([ a[1], b[1] ])
+  }
+  if(includePointAtInfinity) {
+    cells.push(
+      [ -1, cells[0][1] ],
+      [ cells[n-1][1], -1 ])
+  }
+  return cells
+}
+
+function triangulate(points, includePointAtInfinity) {
   var n = points.length
   if(n === 0) {
     return []
   }
   var d = points[0].length
+
+  //Special case:  For 1D we can just sort the points
+  if(d === 1) {
+    return triangulate1D(n, points, includePointAtInfinity)
+  }
   
   //Lift points, sort
   var lifted = new Array(n)
@@ -78,14 +106,42 @@ function triangulate(points) {
   }
 
   //Construct convex hull
-  return ch(dpoints).filter(function(cell) {
-    for(var i=0; i<=d; ++i) {
-      var v = dindex[cell[i]]
-      if(v < 0) {
-        return false
+  var hull = ch(dpoints)
+  if(includePointAtInfinity) {
+    hull = hull.filter(function(cell) {
+      var count = 0
+      for(var j=0; j<=d; ++j) {
+        var v = dindex[cell[j]]
+        if(v < 0) {
+          if(++count >= 2) {
+            return false
+          }
+        }
+        cell[j] = v
       }
-      cell[i] = v
+      return true
+    })
+  } else {
+    hull = hull.filter(function(cell) {
+      for(var i=0; i<=d; ++i) {
+        var v = dindex[cell[i]]
+        if(v < 0) {
+          return false
+        }
+        cell[i] = v
+      }
+      return true
+    })
+  }
+
+  if(d & 1) {
+    for(var i=0; i<hull.length; ++i) {
+      var h = hull[i]
+      var x = h[0]
+      h[0] = h[1]
+      h[1] = x
     }
-    return true
-  })
+  }
+
+  return hull
 }
