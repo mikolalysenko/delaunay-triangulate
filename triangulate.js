@@ -24,7 +24,6 @@ function compareLifted(a, b) {
   return 0
 }
 
-
 function triangulate1D(n, points, includePointAtInfinity) {
   var lifted = points.map(function(p, i) {
     return [ p[0], i ]
@@ -36,11 +35,11 @@ function triangulate1D(n, points, includePointAtInfinity) {
   for(var i=1; i<n; ++i) {
     var a = lifted[i-1]
     var b = lifted[i]
-    cells.push([ a[1], b[1] ])
+    cells[i-1] = [ a[1], b[1] ]
   }
   if(includePointAtInfinity) {
     cells.push(
-      [ -1, cells[0][1] ],
+      [ -1, cells[0][1], ],
       [ cells[n-1][1], -1 ])
   }
   return cells
@@ -51,7 +50,11 @@ function triangulate(points, includePointAtInfinity) {
   if(n === 0) {
     return []
   }
+  
   var d = points[0].length
+  if(d < 1) {
+    return []
+  }
 
   //Special case:  For 1D we can just sort the points
   if(d === 1) {
