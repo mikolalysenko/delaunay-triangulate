@@ -9,8 +9,6 @@ tape("fuzz-1d", function(t) {
   for(var j=0; j<40; ++j) {
     points[j] = [ Math.random() ]
   }
-  console.log(points)
-
   isDelaunay(t, dt(points), points)
   t.end()
 })
