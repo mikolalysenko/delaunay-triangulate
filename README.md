@@ -1,8 +1,17 @@
 delaunay-triangulate
 ====================
-Triangulates a set of points into a Delaunay triangulation.  This code works in arbitrary dimensions, and both in the server and in the browser.
+Triangulates a set of points into a [Delaunay triangulation](http://en.wikipedia.org/wiki/Delaunay_triangulation).  This code works in arbitrary dimensions, and both in the server and in the browser.
 
-## Example
+[![testling badge](https://ci.testling.com/mikolalysenko/delaunay-triangulate.png)](https://ci.testling.com/mikolalysenko/delaunay-triangulate)
+
+[![build status](https://secure.travis-ci.org/mikolalysenko/delaunay-triangulate.png)](http://travis-ci.org/mikolalysenko/delaunay-triangulate)
+
+Here are some in browser demos:
+
+* [2D Delaunay triangulation](http://mikolalysenko.github.io/delaunay-triangulate/2d.html)
+* [3D Delaunay triangulation](http://mikolalysenko.github.io/delaunay-triangulate/3d.html)
+
+# Example
 
 ```javascript
 var triangulate = require("delaunay-triangulate")
@@ -20,11 +29,11 @@ var triangles = triangulate(points)
 console.log(triangles)
 ```
 
-## Install
+# Install
 
     npm install delaunay-triangulate
 
-## API
+# API
 
 #### `require("delaunay-triangulate")(points[,pointAtInfinity])`
 Constructs a Delaunay triangulation over `points`
@@ -34,5 +43,5 @@ Constructs a Delaunay triangulation over `points`
 
 **Returns** A list of cells representing the faces of the triangulation.  These are triangles in 2D or tetrahedra in 3D.
 
-## Credits
+# Credits
 (c) 2013-2014 Mikola Lysenko. MIT License
