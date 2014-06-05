@@ -18,7 +18,6 @@ tape("edge-cases", function(t) {
 
   //Generate cuboids
   for(var d=1; d<=4; ++d) {
-
     var verts = []
     for(var i=0; i<(1<<d); ++i) {
       var p = new Array(d)
@@ -34,6 +33,18 @@ tape("edge-cases", function(t) {
 
     var h = triangulate(verts)
     t.ok(h.length > 0, "make sure no crash on hypercube, d=" + d)
+
+    if(d > 1) {
+      var line = []
+      for(var i=0; i<10; ++i) {
+        var p = new Array(i)
+        for(var j=0; j<d; ++j) {
+          p[j] = i
+        }
+        line.push(p)
+      }
+      t.same(triangulate(line), [], "test collinear, d=" + d)
+    }
   }
 
   t.end()
