@@ -1,7 +1,7 @@
 {
   "name": "delaunay-triangulate",
   "version": "1.1.2",
-  "description": "Exact Delaunay triangulation",
+  "description": "Finds ",
   "main": "triangulate.js",
   "directories": {
     "test": "test"
@@ -22,7 +22,9 @@
     "gl-matrix": "^2.1.0",
     "game-shell-orbit-camera": "^1.0.0",
     "esprima": "^1.2.2",
-    "gl-simplicial-complex": "^1.0.0"
+    "gl-simplicial-complex": "^1.0.0",
+    "delaunay-fast": "^1.0.1",
+    "delaunay": "^0.4.0"
   },
   "scripts": {
     "test": "tape test/*.js"

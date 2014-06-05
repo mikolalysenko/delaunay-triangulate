@@ -16,7 +16,7 @@ function compareLifted(a, b) {
   var bp = b.point
   var d = ap.length
   for(var i=d-1; i>=0; --i) {
-    var s = ap[i] - bp[i]
+    var s = bp[i] - ap[i]
     if(s) {
       return s
     }
@@ -116,7 +116,7 @@ function triangulate(points, includePointAtInfinity) {
   }
 
   //Construct convex hull
-  var hull = ch(dpoints)
+  var hull = ch(dpoints, false)
   if(includePointAtInfinity) {
     hull = hull.filter(function(cell) {
       var count = 0
