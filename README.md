@@ -2,6 +2,8 @@ delaunay-triangulate
 ====================
 Triangulates a set of points into a [Delaunay triangulation](http://en.wikipedia.org/wiki/Delaunay_triangulation).  This code works in arbitrary dimensions, and both in the server and in the browser.
 
+<img src="delaunay3d.png">
+
 [![testling badge](https://ci.testling.com/mikolalysenko/delaunay-triangulate.png)](https://ci.testling.com/mikolalysenko/delaunay-triangulate)
 
 [![build status](https://secure.travis-ci.org/mikolalysenko/delaunay-triangulate.png)](http://travis-ci.org/mikolalysenko/delaunay-triangulate)
