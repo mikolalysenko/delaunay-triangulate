@@ -25,6 +25,13 @@ function compareLifted(a, b) {
 }
 
 function triangulate1D(n, points, includePointAtInfinity) {
+  if(n === 1) {
+    if(includePointAtInfinity) {
+      return [ [-1, 0] ]
+    } else {
+      return []
+    }
+  }
   var lifted = points.map(function(p, i) {
     return [ p[0], i ]
   })
