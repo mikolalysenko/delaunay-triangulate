@@ -70,7 +70,7 @@ function triangulate(points, includePointAtInfinity) {
   
   //Lift points, sort
   var lifted = new Array(n)
-  var upper = 0.0
+  var upper = 1.0
   for(var i=0; i<n; ++i) {
     var p = points[i]
     var x = new Array(d+1)
