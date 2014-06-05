@@ -14,7 +14,10 @@ tape("edge-cases", function(t) {
   t.same(triangulate([[0]], true), [[-1,0]], "triangulation with 1 point + infinity")
 
   t.same(triangulate([[0,0]]), [], "one point in 2D")
+  t.same(triangulate([[0,0]], true), [], "one point in 2D")
+  
   t.same(triangulate([[0,0,0]]), [], "one point in 3D")
+  t.same(triangulate([[0,0,0]], true), [], "one point in 3D")
 
   //Generate cuboids
   for(var d=1; d<=4; ++d) {
