@@ -15,7 +15,7 @@ function compareLifted(a, b) {
   var ap = a.point
   var bp = b.point
   var d = ap.length
-  for(var i=d-1; i>=0; --i) {
+  for(var i=0; i<d; ++i) {
     var s = bp[i] - ap[i]
     if(s) {
       return s
