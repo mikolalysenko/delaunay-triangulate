@@ -85,6 +85,9 @@ function triangulate(points, includePointAtInfinity) {
   }
   uniq(lifted, compareLifted)
   
+  //Double points
+  n = lifted.length
+
   //Create new list of points
   var dpoints = new Array(n + d + 1)
   var dindex = new Array(n + d + 1)

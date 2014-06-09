@@ -31,5 +31,13 @@ tape("delaunay-2d", function(t) {
       [-1,1,3]
     ], "2d + point at infinity")
 
+  points.push([0.5, 0.5])
+  compare(t, triangulate(points), [
+      [4,0,3],
+      [4,2,0],
+      [4,2,1],
+      [4,3,1]
+    ], "2d + repeated point")
+
   t.end()
 })
