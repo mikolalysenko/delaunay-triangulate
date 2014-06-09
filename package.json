@@ -1,6 +1,6 @@
 {
   "name": "delaunay-triangulate",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Delaunay triangulations in any dimension",
   "main": "triangulate.js",
   "directories": {

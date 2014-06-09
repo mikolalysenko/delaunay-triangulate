@@ -2,7 +2,6 @@
 
 var ch = require("incremental-convex-hull")
 var uniq = require("uniq")
-var sc = require("simplicial-complex")
 
 module.exports = triangulate
 
